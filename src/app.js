@@ -33,6 +33,10 @@ app.use(express.static(
 // Handlebars
 configureHandlebars(app);
 
+app.get('/', (req, res) => {
+    res.redirect('/user/login');
+});
+
 // Router
 app.use('/user', authRouter);
 app.use('/profile', profileRouter);
